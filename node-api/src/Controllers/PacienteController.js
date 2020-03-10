@@ -8,5 +8,11 @@ module.exports = {
 
     return res.json(pacientes);
 
-  }
+  },
+  async store(req, res) {
+    const paciente = await Paciente.create(req.body);
+
+    return res.json(paciente);
+
+  },
 };
