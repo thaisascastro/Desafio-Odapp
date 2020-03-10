@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const mongoosePaginate = require("mongoose-paginate");
 const PacienteSchema = new mongoose.Schema({
   nome: {
     type: String,
@@ -22,5 +22,6 @@ const PacienteSchema = new mongoose.Schema({
     required: true,
   }
 });
+PacienteSchema.plugin(mongoosePaginate);
 
 mongoose.model('Paciente', PacienteSchema);
