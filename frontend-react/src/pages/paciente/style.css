@@ -1,0 +1,22 @@
+.paciente-info {
+  max-width: 700px;
+  margin:20 px auto 0;
+  padding: 20 px;
+  background: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.paciente-info h1 {
+  font-size: 32px;
+}
+
+.paciente-info p {
+  color: #666;
+  line-height: 24px;
+  margin-top: 5px;
+}
+
+.paciente-info p a {
+  color: #069;
+}
