@@ -11,7 +11,7 @@ export default class Main extends Component {
     page: 1,
   }
 
-  componentDidMouth() {
+  componentDidMount() {
     this.loadPacientes();
   }
 
@@ -23,11 +23,11 @@ export default class Main extends Component {
     this.setState({ pacientes: docs, pacienteInfo, page });
 
     this.prevPage = () => {
-      const { page, pacienteInfo } = this.state;
+      const { page } = this.state;
 
       if (page === 1) return;
-
       const pageNumber = page - 1;
+      this.loadPacientes(pageNumber);
     }
 
     this.nextPage = () => {
@@ -46,8 +46,10 @@ export default class Main extends Component {
       <div className="paciente-list">
         {pacientes.map(paciente => (
           <article key={paciente._id}>
-            <strong>{paciente.title}</strong>
-            <p>{paciente.description} </p>
+            <div className="dados-paciente"><strong>Nome: </strong><p>{paciente.nome}</p></div>
+            <div className="dados-paciente"><strong>Idade: </strong><p>{paciente.idade} </p></div>
+            <div className="dados-paciente"><strong>Cidade: </strong><p>{paciente.cidade}</p></div>
+            <div className="dados-paciente"><strong>Estado:</strong><p>{paciente.estado}</p></div>
             <Link to={`/paciente/${paciente._id}`}>Acessar</Link>
           </article>
         ))}

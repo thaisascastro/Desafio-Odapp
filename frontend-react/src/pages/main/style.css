@@ -1,10 +1,11 @@
-.product-list {
+.paciente-list {
   max-width: 700px;
   margin: 20px auto 0;
   padding: 0 20px;
 }
 
-.product-list article{
+
+.paciente-list article{
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -12,14 +13,14 @@
   margin-bottom: 20px;
 }
 
-.product-list article p {
+.paciente-list article p {
   font-size: 16px;
   color: #999;
   margin-top: 5px;
   line-height: 24px;
 }
 
-.product-list article a {
+.paciente-list article a {
   height: 42px;
   border-radius: 5px;
   border: 2px solid #8b10ae;
@@ -34,7 +35,7 @@
   align-items: center;
 }
 
-.product-list article a:hover {
+.paciente-list article a:hover {
   background: #8b10ae;
   color: #fff;
 }
@@ -66,4 +67,14 @@
 
 .paciente-list .actions button[disabled]:hover{
   opacity: 0.5;
+}
+
+.dados-paciente{
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+.dados-paciente p {
+  margin-left: 5px;
+
 }
