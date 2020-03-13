@@ -4,7 +4,6 @@
   padding: 0 20px;
 }
 
-
 .paciente-list article{
   background: #fff;
   border: 1px solid #ddd;
@@ -56,6 +55,7 @@
   font-weight: bold;
   cursor: pointer;
 }
+
 .paciente-list .actions button[disabled] {
   opacity: 0.5;
   cursor: default;
@@ -74,7 +74,7 @@
   align-items: baseline;
   margin-bottom: 2px;
 }
+
 .dados-paciente p {
   margin-left: 5px;
-
 }

@@ -1,7 +1,7 @@
 .paciente-info {
   max-width: 700px;
-  margin:20 px auto 0;
-  padding: 20 px;
+  margin:20px auto 0;
+  padding: 20px;
   background: #fff;
   border-radius: 5px;
   border: 1px solid #ddd;
@@ -19,4 +19,19 @@
 
 .paciente-info p a {
   color: #069;
+}
+
+.paciente-info .link  {
+  display: flex;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 0;
+  background: #8b10ae;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  justify-content: center;
+  text-decoration: none;
 }

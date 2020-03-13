@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import api from '../../services/api';
-import './style.css'
+import './style.css';
+import { Link } from 'react-router-dom';
 export default class Paciente extends Component {
   state = {
     paciente: {},
@@ -8,8 +9,8 @@ export default class Paciente extends Component {
 
   async componentDidMount() {
     const { id } = this.props.match.params;
-    const response = await api.get(`/paciente/${id}`);
-
+    const response = await api.get(`/pacientes/${id}`);
+    console.log(response)
     this.setState({ paciente: response.data });
 
   }
@@ -18,12 +19,13 @@ export default class Paciente extends Component {
 
     return (
       <div className="paciente-info">
-        <h1>{paciente.title}</h1>
-        <p>{paciente.description}</p>
-
-        <p>
-          URL:<a href={paciente.url}>{paciente.url}</a>
-        </p>
+        <article key={paciente._id}>
+          <div className="dados-paciente"><strong>Nome: </strong><p>{paciente.nome}</p></div>
+          <div className="dados-paciente"><strong>Idade: </strong><p>{paciente.idade} </p></div>
+          <div className="dados-paciente"><strong>Cidade: </strong><p>{paciente.cidade}</p></div>
+          <div className="dados-paciente"><strong>Estado:</strong><p>{paciente.estado}</p></div>
+          <Link to={`/`} className="link">Voltar</Link>
+        </article>
       </div>
     );
   }
