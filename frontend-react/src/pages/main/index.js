@@ -37,6 +37,10 @@ export default class Main extends Component {
     this.loadPacientes(pageNumber);
   }
 
+  delete = async (id) => {
+    await api.delete(`/pacientes/${id}`)
+  }
+
   render() {
     const { pacientes, page, pacienteInfo } = this.state;
 
@@ -50,7 +54,7 @@ export default class Main extends Component {
             <div className="dados-paciente"><strong>Estado:</strong><p>{paciente.estado}</p></div>
             <Link to={`/paciente/${paciente._id}`}>Acessar</Link>
             <Link to={`/paciente/${paciente._id}`}>Editar</Link>
-            <Link to={`/paciente/${paciente._id}`}>Excluir</Link>
+            <Link to={''} onClick={() => this.delete(paciente._id)}>Excluir</Link>
           </article>
         ))}
         <div className="actions">
