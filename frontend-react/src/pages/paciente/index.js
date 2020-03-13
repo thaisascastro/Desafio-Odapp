@@ -10,7 +10,6 @@ export default class Paciente extends Component {
   async componentDidMount() {
     const { id } = this.props.match.params;
     const response = await api.get(`/pacientes/${id}`);
-    console.log(response)
     this.setState({ paciente: response.data });
 
   }

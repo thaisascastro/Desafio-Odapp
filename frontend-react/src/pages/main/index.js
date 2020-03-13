@@ -17,26 +17,24 @@ export default class Main extends Component {
 
   loadPacientes = async (page = 1) => {
     const response = await api.get(`/pacientes?page=${page}`);
-
     const { docs, ...pacienteInfo } = response.data;
-
     this.setState({ pacientes: docs, pacienteInfo, page });
+  }
 
-    this.prevPage = () => {
-      const { page } = this.state;
+  prevPage = () => {
+    const { page } = this.state;
 
-      if (page === 1) return;
-      const pageNumber = page - 1;
-      this.loadPacientes(pageNumber);
-    }
+    if (page === 1) return;
+    const pageNumber = page - 1;
+    this.loadPacientes(pageNumber);
+  }
 
-    this.nextPage = () => {
-      const { page, pacienteInfo } = this.state;
+  nextPage = () => {
+    const { page, pacienteInfo } = this.state;
 
-      if (page === pacienteInfo.pages) return;
-      const pageNumber = page + 1;
-      this.loadPacientes(pageNumber);
-    }
+    if (page === pacienteInfo.pages) return;
+    const pageNumber = page + 1;
+    this.loadPacientes(pageNumber);
   }
 
   render() {
@@ -51,6 +49,8 @@ export default class Main extends Component {
             <div className="dados-paciente"><strong>Cidade: </strong><p>{paciente.cidade}</p></div>
             <div className="dados-paciente"><strong>Estado:</strong><p>{paciente.estado}</p></div>
             <Link to={`/paciente/${paciente._id}`}>Acessar</Link>
+            <Link to={`/paciente/${paciente._id}`}>Editar</Link>
+            <Link to={`/paciente/${paciente._id}`}>Excluir</Link>
           </article>
         ))}
         <div className="actions">
