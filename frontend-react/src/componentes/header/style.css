@@ -1,4 +1,4 @@
-header#main-header{
+header#main-header, a{
   height: 60px;
   background: #8b10ae;
   width: 100;
@@ -8,4 +8,9 @@ header#main-header{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 10px;
 }
